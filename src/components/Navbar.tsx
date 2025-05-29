@@ -4,14 +4,25 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu'
-import { NavLink } from 'react-router'
 import { ModeToggle } from './theme/mode-provider'
 import { Menu } from 'lucide-react'
-import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetTitle,
+} from '@/components/ui/sheet'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
+
+  const handleNavigation = (path: string) => {
+    navigate(path)
+    setOpen(false)
+  }
 
   return (
     <div className="flex items-center max-w-5xl mx-auto justify-between mb-6">
@@ -21,24 +32,24 @@ function Navbar() {
         <NavigationMenu className="mr-8">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavLink to="/">
-                <NavigationMenuLink>Home</NavigationMenuLink>
-              </NavLink>
+              <NavigationMenuLink onClick={() => handleNavigation('/')}>
+                Home
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavLink to="/about">
-                <NavigationMenuLink>About</NavigationMenuLink>
-              </NavLink>
+              <NavigationMenuLink onClick={() => handleNavigation('/about')}>
+                About
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavLink to="/projects">
-                <NavigationMenuLink>Projects</NavigationMenuLink>
-              </NavLink>
+              <NavigationMenuLink onClick={() => handleNavigation('/projects')}>
+                Projects
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavLink to="/contact">
-                <NavigationMenuLink>Contact</NavigationMenuLink>
-              </NavLink>
+              <NavigationMenuLink onClick={() => handleNavigation('/contact')}>
+                Contact
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -53,31 +64,32 @@ function Navbar() {
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="p-0">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <nav className="flex flex-col gap-4 mt-8 px-6">
-              <NavLink to="/" className="py-2" onClick={() => setOpen(false)}>
+              <button
+                onClick={() => handleNavigation('/')}
+                className="py-2 text-left hover:bg-accent hover:text-accent-foreground px-4 rounded-md transition-colors"
+              >
                 Home
-              </NavLink>
-              <NavLink
-                to="/about"
-                className="py-2"
-                onClick={() => setOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigation('/about')}
+                className="py-2 text-left hover:bg-accent hover:text-accent-foreground px-4 rounded-md transition-colors"
               >
                 About
-              </NavLink>
-              <NavLink
-                to="/projects"
-                className="py-2"
-                onClick={() => setOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigation('/projects')}
+                className="py-2 text-left hover:bg-accent hover:text-accent-foreground px-4 rounded-md transition-colors"
               >
                 Projects
-              </NavLink>
-              <NavLink
-                to="/contact"
-                className="py-2"
-                onClick={() => setOpen(false)}
+              </button>
+              <button
+                onClick={() => handleNavigation('/contact')}
+                className="py-2 text-left hover:bg-accent hover:text-accent-foreground px-4 rounded-md transition-colors"
               >
                 Contact
-              </NavLink>
+              </button>
             </nav>
           </SheetContent>
         </Sheet>

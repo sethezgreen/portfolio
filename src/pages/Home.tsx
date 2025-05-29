@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -44,6 +43,21 @@ function Home() {
           </p>
         </CardContent>
       </Card>
+      <section className="container mx-auto px-4 py-8">
+        <div className="container">
+          <p>My Skills</p>
+        </div>
+      </section>
+      <section className="container mx-auto px-4 py-8">
+        <div className="container">
+          <p>Experience</p>
+        </div>
+      </section>
+      <section className="container mx-auto px-4 py-8">
+        <div className="container">
+          <p>Education</p>
+        </div>
+      </section>
     </div>
   )
 }

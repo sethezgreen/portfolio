@@ -5,7 +5,7 @@ function MainLayout() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="flex flex-col items-center max-w-4xl mx-auto">
         <Outlet />
       </main>
     </>
