@@ -8,6 +8,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons/faGithubSquare'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
+import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
+import Education from '@/components/Education'
 
 function Home() {
   return (
@@ -46,16 +49,19 @@ function Home() {
       <section className="container mx-auto px-4 py-8">
         <div className="container">
           <p>My Skills</p>
+          <Skills />
         </div>
       </section>
       <section className="container mx-auto px-4 py-8">
         <div className="container">
           <p>Experience</p>
+          <Experience />
         </div>
       </section>
       <section className="container mx-auto px-4 py-8">
         <div className="container">
           <p>Education</p>
+          <Education />
         </div>
       </section>
     </div>
