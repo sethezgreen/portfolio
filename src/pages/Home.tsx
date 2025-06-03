@@ -11,6 +11,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import Education from '@/components/Education'
+import SectionHeader from '@/components/SectionHeader'
 
 function Home() {
   return (
@@ -48,19 +49,19 @@ function Home() {
       </Card>
       <section className="container mx-auto px-4 py-8">
         <div className="container">
-          <p>My Skills</p>
+          <SectionHeader title="My Skills" />
           <Skills />
         </div>
       </section>
       <section className="container mx-auto px-4 py-8">
         <div className="container">
-          <p>Experience</p>
+          <SectionHeader title="Experience" />
           <Experience />
         </div>
       </section>
       <section className="container mx-auto px-4 py-8">
         <div className="container">
-          <p>Education</p>
+          <SectionHeader title="Education" />
           <Education />
         </div>
       </section>
